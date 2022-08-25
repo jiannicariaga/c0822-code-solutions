@@ -1,0 +1,56 @@
+body {
+  font-family: Karla, sans-serif;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  width: 75%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.column-full > h1 {
+  font-size: 3.25rem;
+  letter-spacing: 4px;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.column-full > p {
+  line-height: 1.75rem;
+  margin-bottom: 3em;
+}
+
+.column-half {
+  margin: 0 30px 20px;
+}
+
+.column-half > img {
+  display: inline-block;
+  width: 28%;
+  height: auto;
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 30%;
+}
+
+.column-half > h3 {
+  margin-top: 2.5rem;
+  margin-bottom: -0.25rem;
+}
+
+.column-half > p {
+  line-height: 2rem;
+}
+
+.column-full > button {
+  color: #d14c45;
+  background: none;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border: 2px solid #d14c45;
+  padding: 0.6rem 2.5rem;
+}
