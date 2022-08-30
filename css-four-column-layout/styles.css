@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  font-family: Barlow, sans-serif;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  background-color: #f7f8fa;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+}
+
+h3 {
+  font-size: 0.62rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+}
+
+p {
+  font-size: 0.52rem;
+  font-weight: 500;
+}
+
+.feature-container {
+  display: flex;
+  justify-content: center;
+}
+
+.feature {
+  margin: 0 -2.5rem;
+}
+
+.image > img {
+  width: 70%;
+  height: auto;
+}
+
+.icon > img {
+  width: 17%;
+  height: auto;
+}
