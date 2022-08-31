@@ -38,7 +38,8 @@ p {
 }
 
 .col-1-4 {
-  margin: 0 -2.25rem;
+  flex-basis: 25%;
+  margin: 0 -1.5rem;
 }
 
 .image > img {
