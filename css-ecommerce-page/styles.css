@@ -4,16 +4,18 @@
 
 body {
   margin: 0;
-}
-
-h1,
-p {
   font-family: "DM Sans", sans-serif;
 }
 
 h1 {
   text-align: center;
   font-size: 1.25rem;
+}
+
+img {
+  height: 295px;
+  width: 100%;
+  object-fit: cover;
 }
 
 p {
@@ -51,9 +53,8 @@ span {
   flex-basis: 20%;
 }
 
-.image-wrapper > img {
-  width: 100%;
-  height: auto;
+.col-space {
+  margin: 0 0.6rem;
 }
 
 .price {
