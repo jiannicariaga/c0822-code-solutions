@@ -13,15 +13,15 @@
 // 5) Output storage
 
 function capitalizeWords(word) {
-  var newWord = word[0].toUpperCase();
+  var newWord = '';
   var tempWord = '';
 
-  for (var i = 1; i < word.length; i++) {
+  for (var i = 0; i < word.length; i++) {
     if (word[i] === ' ') {
-      newWord += ' ' + tempWord;
+      newWord += tempWord + ' ';
       tempWord = '';
     } else {
-      tempWord += word[i];
+      tempWord += word[i].toLowerCase();
     }
   }
 
