@@ -1,11 +1,8 @@
 /* exported capitalizeWord */
 
 // 1) Create storage for string output
-// 2) Check if string input is 'javascript'
-//    2a) Create temporary storage for 'java'
-//        2aa) Concatenate first character with remaining characters as lowercase
-//    2b) Create temporary storage for 'script'
-//        2ba) Concatenate first character as uppercase with remaining characters as lowercase
+// 2) Check if string input in lowercase is 'javascript'
+//    2a) Output 'JavaScript'
 // 3) Get first character of string input
 //    3a) Convert first character to uppercase
 //    3b) Assign converted first character to storage
@@ -18,10 +15,7 @@ function capitalizeWord(word) {
   var newWord = word[0].toUpperCase();
 
   if (word.toLowerCase() === 'javascript') {
-    var tempStringOne = newWord + word.toLowerCase().substring(1, 4);
-    var tempStringTwo = word.charAt(4).toUpperCase() + word.toLowerCase().substring(5);
-
-    return tempStringOne + tempStringTwo;
+    return 'JavaScript';
   }
 
   for (var i = 1; i < word.length; i++) {
