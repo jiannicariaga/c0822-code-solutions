@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container-light {
+  background-color: #fef9f1;
+}
+
+.container-dark {
+  background-color: #111;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.light-bulb-on {
+  width: 200px;
+  height: 200px;
+  background-color: #faea84;
+  box-shadow: 0 0 50px 0 #faea84;
+  border-radius: 50%;
+}
+
+.light-bulb-off {
+  width: 200px;
+  height: 200px;
+  background-color: #252525;
+  box-shadow: 0 0 50px 0 #252525;
+  border-radius: 50%;
+}
