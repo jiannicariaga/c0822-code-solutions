@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* Button Styles */
+
+button {
+  font-size: 1.5rem;
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px gray;
+  padding: 0.5rem 1.5rem;
+}
+
+.open-modal-btn {
+  background-color: blue;
+  margin: 0.5rem 0 0 0.5rem;
+}
+
+.no-btn {
+  background-color: red;
+}
+
+.open-modal-btn:hover,
+.no-btn:hover {
+  cursor: pointer;
+}
+
+/* Modal Styles */
+
+.modal-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.modal {
+  text-align: center;
+  border: 1px solid black; /* Temp */
+  border-radius: 4px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
