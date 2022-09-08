@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.phrase {
+  text-align: center;
+}
+
+h1 {
+  margin: 0 auto;
+}
+
+span {
+  white-space: pre;
+}
