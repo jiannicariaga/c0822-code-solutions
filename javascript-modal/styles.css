@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+button {
+  font-size: 1.5rem;
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px gray;
+  padding: 0.5rem 1.5rem;
+}
+
+.open-modal-btn {
+  background-color: blue;
+  margin: 0.5rem 0 0 0.5rem;
+}
+
+.no-btn {
+  background-color: red;
+}
+
+.open-modal-btn:hover,
+.no-btn:hover {
+  cursor: pointer;
+}
+
+.modal-container-off {
+  display: none;
+}
+
+.modal-container-on {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 75%);
+  z-index: 1;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 4px;
+  background-color: white;
+  padding: 3rem 2rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
