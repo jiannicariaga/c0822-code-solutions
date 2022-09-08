@@ -19,3 +19,9 @@ function includes(array, value) {
 
   return included;
 }
+
+// ALTERNATE SOLUTION USING BUILT-IN METHODS
+
+// function includes(array, values) {
+//   return array.includes(value);
+// }
