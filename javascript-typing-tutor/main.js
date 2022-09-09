@@ -1,17 +1,45 @@
-// 1) Query first character
-// 2) Store text content of first character
-// 3)
-// 2) Underline first character
-// 3) Check if keydown matches first character
-//    3a) Y: Turn charater green and remove underline
-//        3aa) Move to next character
-//    3b) N: Turn character red
-//        3ba) Stay on current character until keydown matches
-
-// var $phrase = document.querySelector('.phrase');
-// var $characters = document.querySelectorAll('span');
+var $phrase = document.querySelectorAll('span');
+var $accuracy = document.querySelector('h2');
+var $modal = document.querySelector('.modal-off');
+var $reset = document.querySelector('.reset');
+var index = 0;
+var keystrokes = 0;
 
 document.addEventListener('keydown', function (event) {
-  // console.log('event.key:', event.key);
+  if (index === $phrase.length - 1) {
+    var accuracy = ($phrase.length / keystrokes) * 100;
 
+    event.preventDefault();
+    $phrase[index].className = 'correct';
+    $accuracy.textContent = 'Accuracy: ' + accuracy.toFixed(2) + '%';
+    $modal.className = 'modal-on';
+
+    return;
+  }
+
+  keystrokes++;
+
+  if (event.key !== $phrase[index].textContent) {
+    $phrase[index].className = 'current-char incorrect';
+
+    return;
+  }
+
+  $phrase[index].className = 'correct';
+  index++;
+
+  if (index < $phrase.length) {
+    $phrase[index].className = 'current-char';
+  }
+});
+
+$reset.addEventListener('click', function (event) {
+  $phrase[0].className = 'current-char';
+  $modal.className = 'modal-off';
+  index = 0;
+  keystrokes = 0;
+
+  for (var i = 1; i < $phrase.length; i++) {
+    $phrase[i].className = '';
+  }
 });
