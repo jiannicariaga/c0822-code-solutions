@@ -1,5 +1,5 @@
-// Check accuracy
-// Attempt insert elements
+// Insert span elements to HTML file
+// Update CSS
 
 var $phrase = document.querySelectorAll('span');
 var $accuracy = document.querySelector('h2');
@@ -9,23 +9,22 @@ var index = 0;
 var keystrokes = 0;
 
 document.addEventListener('keydown', function (event) {
-  if (index === $phrase.length - 1) {
-    event.preventDefault();
-    gameOver();
-
-    return;
-  }
-
   keystrokes++;
 
-  if (event.key !== $phrase[index].textContent) {
-    $phrase[index].className = 'current-char incorrect';
-
+  if (index === $phrase.length - 1) {
+    event.preventDefault();
+    $phrase[index].className = 'correct';
+    gameOver();
     return;
   }
 
-  $phrase[index].className = 'correct';
-  index++;
+  if (event.key === $phrase[index].textContent) {
+    $phrase[index].className = 'correct';
+    index++;
+  } else {
+    $phrase[index].className = 'current-char incorrect';
+    return;
+  }
 
   if (index < $phrase.length) {
     $phrase[index].className = 'current-char';
@@ -45,7 +44,6 @@ $reset.addEventListener('click', function (event) {
 
 function gameOver() {
   var accuracy = ($phrase.length / keystrokes) * 100;
-  $phrase[index].className = 'correct';
   $accuracy.textContent = 'Accuracy: ' + accuracy.toFixed(2) + '%';
   $modal.className = 'modal-on';
 }
