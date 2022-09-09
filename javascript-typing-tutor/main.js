@@ -1,3 +1,6 @@
+// Check accuracy
+// Attempt insert elements
+
 var $phrase = document.querySelectorAll('span');
 var $accuracy = document.querySelector('h2');
 var $modal = document.querySelector('.modal-off');
@@ -7,12 +10,8 @@ var keystrokes = 0;
 
 document.addEventListener('keydown', function (event) {
   if (index === $phrase.length - 1) {
-    var accuracy = ($phrase.length / keystrokes) * 100;
-
     event.preventDefault();
-    $phrase[index].className = 'correct';
-    $accuracy.textContent = 'Accuracy: ' + accuracy.toFixed(2) + '%';
-    $modal.className = 'modal-on';
+    gameOver();
 
     return;
   }
@@ -43,3 +42,10 @@ $reset.addEventListener('click', function (event) {
     $phrase[i].className = '';
   }
 });
+
+function gameOver() {
+  var accuracy = ($phrase.length / keystrokes) * 100;
+  $phrase[index].className = 'correct';
+  $accuracy.textContent = 'Accuracy: ' + accuracy.toFixed(2) + '%';
+  $modal.className = 'modal-on';
+}
