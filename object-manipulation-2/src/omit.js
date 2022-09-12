@@ -24,10 +24,3 @@ function omit(source, keys) {
 
   return newObject;
 }
-
-//    source  keys       newObject
-// 1) foo     foo   ===  deleted property (nonexistent), break {}
-// 2) bar     foo   !==  added property {bar}
-// 3) bar     baz   !==  added property {bar}
-// 4) baz     foo   !==  added property {bar, baz}
-// 5) baz     baz   ===  deleted property, break {bar}
