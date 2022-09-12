@@ -1,4 +1,4 @@
-var phrase = generatePhrase('omae wa mou shindeiru');
+var phrase = generatePhrase('grumpy wizards make toxic brew');
 var index = 0;
 var keystrokes = 0;
 
