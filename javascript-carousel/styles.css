@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  font-family: sans-serif;
 }
 
 .container {
@@ -33,4 +34,17 @@ img {
   object-fit: scale-down;
   width: 100%;
   height: 400px;
+}
+
+.progress-dots {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.progress-dots > span {
+  margin: 0 0.25rem;
+}
+
+.progress-dots > span:hover {
+  cursor: pointer;
 }

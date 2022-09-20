@@ -1,4 +1,5 @@
-var $carouselImage = document.querySelector('.carousel-image');
+var $heroImage = document.querySelector('.hero-image');
+var $progressDots = document.querySelectorAll('span');
 var images = [
   {
     src: 'images/001.png',
@@ -23,15 +24,27 @@ var images = [
 ];
 var imagesIndex = 0;
 
-function updateCarousel() {
+function stepImage() {
   imagesIndex++;
 
   if (imagesIndex === images.length) {
     imagesIndex = 0;
   }
 
-  $carouselImage.src = images[imagesIndex].src;
-  $carouselImage.alt = images[imagesIndex].alt;
+  $heroImage.src = images[imagesIndex].src;
+  $heroImage.alt = images[imagesIndex].alt;
+
+  stepProgressDots(imagesIndex);
 }
 
-setInterval(updateCarousel, 3000);
+function stepProgressDots(number) {
+  for (var i = 0; i < images.length; i++) {
+    if (i === number) {
+      $progressDots[i].className = 'fas fa-circle';
+    } else {
+      $progressDots[i].className = 'far fa-circle';
+    }
+  }
+}
+
+setInterval(stepImage, 3000);
