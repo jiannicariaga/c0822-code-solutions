@@ -37,13 +37,7 @@ Bank.prototype.getTotalAssets = function () {
   }
 
   for (var i = 0; i < this.accounts.length; i++) {
-    for (var j = 0; j < this.accounts[i].transactions.length; j++) {
-      if (this.accounts[i].transactions[j].type === 'deposit') {
-        totalAssets += this.accounts[i].transactions[j].amount;
-      } else {
-        totalAssets -= this.accounts[i].transactions[j].amount;
-      }
-    }
+    totalAssets += this.accounts[i].getBalance();
   }
 
   return totalAssets;
