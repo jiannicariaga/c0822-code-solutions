@@ -7,18 +7,27 @@ function Account(number, holder) {
 }
 
 Account.prototype.deposit = function (amount) {
-  // var deposit = new Transaction('deposit', amount);
+  var transaction = new Transaction('deposit', amount);
 
-  if (typeof amount !== 'number' || amount <= 0) {
+  if (isNaN(amount) || !Number.isInteger(amount) || amount <= 0) {
     return false;
   }
 
-  // deposit.transactions.push(amount);
+  this.transactions.push([transaction.type, transaction.amount]);
+
   return true;
 };
 
 Account.prototype.withdraw = function (amount) {
+  var transaction = new Transaction('withdrawal', amount);
 
+  if (isNaN(amount) || !Number.isInteger(amount) || amount <= 0) {
+    return false;
+  }
+
+  this.transactions.push([transaction.type, transaction.amount]);
+
+  return true;
 };
 
 Account.prototype.getBalance = function () {
