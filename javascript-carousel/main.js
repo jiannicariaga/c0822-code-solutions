@@ -1,5 +1,5 @@
 var $heroImage = document.querySelector('.hero-image');
-var $progressDots = document.querySelectorAll('span');
+var $progressDots = document.querySelectorAll('.dot');
 var images = [
   {
     src: 'images/001.png',

@@ -14,10 +14,19 @@ body {
 .row {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.column-full {
+.column-100 {
   flex-basis: 100%;
+}
+
+.column-80 {
+  flex-basis: 80%;
+}
+
+.column-10 {
+  flex-basis: 10%;
 }
 
 h1 {
@@ -30,21 +39,27 @@ h1 {
   margin: 0 auto;
 }
 
-img {
+.carousel img {
   object-fit: scale-down;
   width: 100%;
   height: 400px;
 }
 
+.chevrons > span {
+  font-size: 3rem;
+}
+
 .progress-dots {
   font-size: 1rem;
   margin-bottom: 1rem;
+  cursor: default;
 }
 
 .progress-dots > span {
   margin: 0 0.25rem;
 }
 
+.chevrons > span:hover,
 .progress-dots > span:hover {
   cursor: pointer;
 }
