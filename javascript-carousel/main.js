@@ -1,5 +1,3 @@
-var $heroImage = document.querySelector('.hero-image');
-var $progressDots = document.querySelectorAll('.dot');
 var images = [
   {
     src: 'images/001.png',
@@ -23,8 +21,13 @@ var images = [
   }
 ];
 var imagesIndex = 0;
+var $heroImage = document.querySelector('.hero-image');
+// var $chevronLeft = document.querySelector('');
+// var $chevronRight = document.querySelector('');
+var $progressDots = document.querySelector('.progress-dots');
+var dots = $progressDots.children;
 
-function stepImage() {
+function stepCarousel() {
   imagesIndex++;
 
   if (imagesIndex === images.length) {
@@ -34,17 +37,19 @@ function stepImage() {
   $heroImage.src = images[imagesIndex].src;
   $heroImage.alt = images[imagesIndex].alt;
 
-  stepProgressDots(imagesIndex);
-}
-
-function stepProgressDots(number) {
   for (var i = 0; i < images.length; i++) {
-    if (i === number) {
-      $progressDots[i].className = 'fas fa-circle';
+    if (i === imagesIndex) {
+      dots[i].className = 'fas fa-circle';
     } else {
-      $progressDots[i].className = 'far fa-circle';
+      dots[i].className = 'far fa-circle';
     }
   }
 }
 
-setInterval(stepImage, 3000);
+// $progressDots.addEventListener('click', function (event) {
+//   if (event.target.matches('.dot')) {
+
+//   }
+// });
+
+setInterval(stepCarousel, 3000);
