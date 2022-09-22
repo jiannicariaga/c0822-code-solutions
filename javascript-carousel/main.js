@@ -21,6 +21,7 @@ var images = [
   }
 ];
 var imagesIndex = 0;
+var intervalId = null;
 var $heroImage = document.querySelector('.hero-image');
 // var $chevronLeft = document.querySelector('');
 // var $chevronRight = document.querySelector('');
@@ -39,17 +40,34 @@ function stepCarousel() {
 
   for (var i = 0; i < images.length; i++) {
     if (i === imagesIndex) {
-      dots[i].className = 'fas fa-circle';
+      dots[i].className = 'dot fas fa-circle';
     } else {
-      dots[i].className = 'far fa-circle';
+      dots[i].className = 'dot far fa-circle';
     }
   }
 }
 
-// $progressDots.addEventListener('click', function (event) {
-//   if (event.target.matches('.dot')) {
+$progressDots.addEventListener('click', function (event) {
+  var dotClicked;
 
-//   }
-// });
+  clearInterval(intervalId);
 
-setInterval(stepCarousel, 3000);
+  if (event.target.matches('.dot')) {
+    dotClicked = event.target.getAttribute('data-dot-id');
+
+    for (var i = 0; i < dots.length; i++) {
+      if (dots[i].getAttribute('data-dot-id') === dotClicked) {
+        dots[i].className = 'dot fas fa-circle';
+        imagesIndex = i;
+        $heroImage.src = images[imagesIndex].src;
+        $heroImage.alt = images[imagesIndex].alt;
+      } else {
+        dots[i].className = 'dot far fa-circle';
+      }
+    }
+  }
+
+  intervalId = setInterval(stepCarousel, 3000);
+});
+
+intervalId = setInterval(stepCarousel, 3000);
