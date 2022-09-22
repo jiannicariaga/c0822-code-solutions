@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-  margin: 0 2rem;
+  margin: 0 1rem;
 }
 
 .row {
@@ -36,17 +36,20 @@ h1 {
 .carousel {
   text-align: center;
   border: 4px solid black;
+  border-radius: 8px;
   margin: 0 auto;
 }
 
 .carousel img {
   object-fit: scale-down;
   width: 100%;
-  height: 400px;
+  height: auto;
+  padding: 1rem;
 }
 
 .chevrons > span {
   font-size: 3rem;
+  margin: 1rem;
 }
 
 .progress-dots {
@@ -56,10 +59,69 @@ h1 {
 }
 
 .progress-dots > span {
-  margin: 0 0.25rem;
+  font-size: 0.75rem;
+  margin: 0 0.25rem 0.25rem;
 }
 
 .chevrons > span:hover,
 .progress-dots > span:hover {
   cursor: pointer;
+}
+
+@media only screen and (min-width: 426px) {
+  .container {
+    margin: 0 2.5rem;
+  }
+
+  .carousel img {
+    width: auto;
+  }
+
+  .chevrons > span {
+    font-size: 4rem;
+    margin: 1.5rem;
+  }
+
+  .progress-dots > span {
+    font-size: 1rem;
+    margin: 0 0.5rem 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .container {
+    margin: 0 8rem;
+  }
+
+  .chevrons > span {
+    font-size: 5rem;
+    margin: 2rem;
+  }
+
+  .progress-dots > span {
+    font-size: 1.5rem;
+    margin: 0 0.75rem 0.75rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .container {
+    margin: 0 16rem;
+  }
+
+  .chevrons > span {
+    font-size: 6rem;
+    margin: 2.5rem;
+  }
+
+  .progress-dots > span {
+    font-size: 2rem;
+    margin: 0 1rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 1441px) {
+  .container {
+    margin: 0 32rem;
+  }
 }

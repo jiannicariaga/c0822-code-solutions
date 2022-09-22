@@ -16,8 +16,8 @@ var images = [
     alt: 'Pikachu'
   },
   {
-    src: 'images/039.png',
-    alt: 'Jigglypuff'
+    src: 'images/999.png',
+    alt: 'Anya Forger'
   }
 ];
 var imagesIndex = 0;
@@ -27,6 +27,21 @@ var $chevronLeft = document.querySelector('.chevron-left');
 var $chevronRight = document.querySelector('.chevron-right');
 var $progressDots = document.querySelector('.progress-dots');
 var dots = $progressDots.children;
+
+function renderProgressDots() {
+  for (var i = 0; i < images.length; i++) {
+    var span = document.createElement('span');
+
+    if (i === 0) {
+      span.className = 'dot fas fa-circle';
+    } else {
+      span.className = 'dot far fa-circle';
+    }
+
+    span.setAttribute('data-dot-id', i);
+    $progressDots.appendChild(span);
+  }
+}
 
 function startCarousel() {
   intervalId = setInterval(stepImages, 3000);
@@ -111,4 +126,5 @@ $progressDots.addEventListener('click', function (event) {
   startCarousel();
 });
 
+renderProgressDots();
 startCarousel();
