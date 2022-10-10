@@ -36,9 +36,7 @@ const library = [
     libraryID: 1233
   }
 ];
-const book3 = library[0];
-const book4 = library[1];
-const book5 = library[2];
+const [book3, book4, book5] = library;
 const [, book6] = library;
 
 console.log('book3:', book3);
