@@ -37,7 +37,7 @@ const library = [
   }
 ];
 const [book3, book4, book5] = library;
-const [, book6] = library;
+const [, , , book6] = library;
 
 console.log('book3:', book3);
 console.log('book4:', book4);
