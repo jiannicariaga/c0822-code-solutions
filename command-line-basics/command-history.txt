@@ -1,0 +1,500 @@
+   56  git commit -m "Revised string check for 'javascript'."
+   57  git push origin string-manupulation-2
+   58  git push origin string-manipulation-2
+   59  git switch main
+   60  git pull origin main
+   61  git branch --list
+   62  git switch string-manipulation-2
+   63  git switch main
+   64  git branch array-manipulation-2
+   65  git switch array-manipulation-2
+   66  git add array-manipulation-2
+   67  git status
+   68  git commit -m "Saving progress."
+   69  git push origin array-manipulation-2
+   70  git switch main
+   71  git switch string-manipulation-2
+   72  git add string-manipulation-2
+   73  git commit -m "Revised string check for 'javascript'."
+   74  git push origin string-manipulation-2
+   75  git switch main
+   76  git branch css-media-queries
+   77  git switch css-media-queries
+   78  git add css-media-queries
+   79  git commit -m "Comeplted css-media-queries exercise."
+   80  git commit --amend
+   81  git commit --ammend -m "Completed css-media-queries exercise."
+   82  git commit --amend -m "Completed css-media-queries exercise."
+   83  git commit -m "Completed css-media-queries exercise."
+   84  git add css-media-queries
+   85  git commit -m "Completed css-media-queries exercise."
+   86  git push origin css-media-queries
+   87  git switch main
+   88  git pull origin main
+   89  git branch javascript-modal
+   90  git switch javascript-modal
+   91  git add javascript-modal
+   92  git commit -m "Saving progress."
+   93  git push origin javascript-modal
+   94  git switch main
+   95  git pull origin main
+   96  git switch javascript-modal
+   97  git status
+   98  git status
+   99  git add javascript-modal
+  100  git status
+  101  git commit -m "Completed javascript-modal challenge."
+  102  git push origin main
+  103  git push origin javascript-modal
+  104  git switch main
+  105  git switch array-manipulation-2
+  106  git status
+  107  git add array-manipulation-2
+  108  git status
+  109  git status
+  110  git status
+  111  git add array-manipulation-2
+  112  git status
+  113  git commit -m "Saving progress."
+  114  git push origin array-manipulation-2
+  115  git switch main
+  116  git switch array-manipulation-2
+  117  git status
+  118  git add array-manipulation-2
+  119  git status
+  120  git commit -m "Completed array-manipulation-2 challenge."
+  121  git push origin array-manipulation-2
+  122  git switch main
+  123  git pull origin main
+  124  git branch dom-event-delegation
+  125  git switch dom-event-delegation
+  126  git status
+  127  git add dom-event-delegation
+  128  git status
+  129  git commit -m "Completed dom-event-delegation exercise."
+  130  git push origin dom-event-delegation
+  131  git switch main
+  132  git pull origin main
+  133  git pull origin main
+  134  git branch javascript-view-swapping
+  135  git switch javascript-view-swapping
+  136  git status
+  137  git add javascript-view-swapping
+  138  git status
+  139  git commit -m "Completed javascript-view-mapping exercise."
+  140  git push origin javascript-view-mapping
+  141  git push origin javascript-view-swapping
+  142  git switch main
+  143  git switch javascript-view-swapping
+  144  git commit --amend -m "Completed javascript-view-swapping exercise."
+  145  git push origin javascript-view-swapping
+  146  git pull origin javascript-view-swapping
+  147  git switch main
+  148  git switch javascript-view-swapping
+  149  git switch main
+  150  git pull origin main
+  151  git branch object-manipulation-2
+  152  git switch-object-manipulation-2
+  153  git switch object-manipulation-2
+  154  git add object-manipulation-2
+  155  git commit -m object-manipulation-2
+  156  git commit --amend -m "Saving progress."
+  157  git push origin object-manipulation-2
+  158  git switch main
+  159  git pull origin main
+  160  git branch css-responsive-layout
+  161  git switch css-responsive-layout
+  162  git status
+  163  git add css-responsive-layout
+  164  git status
+  165  git commit -m "Completed css-responsive-layout exercise."
+  166  git push origin css-responsive-layout
+  167  git switch main
+  168  git pull origin main
+  169  git branch javascript-typing-tutor
+  170  git switch javascript-typing-tutor
+  171  git status
+  172  git add javascript-typing-tutor
+  173  git commit -m "Saving progress."
+  174  git add javascript-typing-tutor
+  175  git commit -m "Saving progress."
+  176  git push origin javascript-typing-tutor
+  177  git pull origin javascript-typing-tutor
+  178  git add javascript-tpying-tutor
+  179  git status
+  180  git add javascript-typing-tutor
+  181  git status
+  182  git commit -m "Saving progress."
+  183  git add javascript-typing-tutor
+  184  git commit -m "Saving progress."
+  185  git push origiin javascript-typing-tutor
+  186  git push origin javascript-typing-tutor
+  187  git switch main
+  188  git branch javascript-and-jason
+  189  git branch -d javascript-and-jason
+  190  git branch javascript-and-json
+  191  git branch javascript-and-json
+  192  git switch javascript-and-json
+  193  git status
+  194  git add javascript-and-json
+  195  git status
+  196  git commit -m "Completed javascript-and-json exercise."
+  197  git push origin javascript-and-json
+  198  git switch main
+  199  git pull origin main
+  200  git switch javascript-typing-tutor
+  201  git add javascript-typing-tutor
+  202  git commit -m "Saving progress."
+  203  git push origin javascript-typing-tutor
+  204  git switch main
+  205  git branch javascript-local-storage
+  206  git switch javascript-local-storage
+  207  git status
+  208  git add javascript-local-storage
+  209  git commit -m "Completed javascript-local-storage exercise."
+  210  git push origin javascript-local-storage
+  211  git switch main
+  212  git switch javascript-local-storage
+  213  git switch main
+  214  git switch javascript-typing-tutor
+  215  git status
+  216  git add javascript-typing-tutor
+  217  git status
+  218  git commit -m "Completed javascript-typing-tutor-exercise."
+  219  git --amend -m "Completed javascript-typing-tutor exercise."
+  220  git --ammend -m "Completed javascript-typing-tutor exercise."
+  221  git commit --amend -m "Completed javascript-typing-tutor exercise."
+  222  git push origin javascript-typing-tutor
+  223  git switch main
+  224  git switch object-manipulation-2
+  225  git add object-manipulation-2
+  226  git status
+  227  git commit -m "Saving progress."
+  228  git push origin object-manipulation-2
+  229  git switch main
+  230  git pull origin main
+  231  git pull origin main
+  232  git switch object-manipulation-2
+  233  git status
+  234  git add object-manipulation-2
+  235  git status
+  236  git commit -m "Saving progress."
+  237  git push origin object-manipulation-2
+  238  git switch main
+  239  git switch object-manipulation-2
+  240  git pull origin main
+  241  git pull origin object-manipulation-2
+  242  git switch main
+  243  git pull origin main
+  244  git pull origin main
+  245  git branch --list
+  246  git branch string-manipulation-3
+  247  git switch string manipulation-3
+  248  git switch string-manipulation-3
+  249  git status
+  250  git add string-manipulation-3
+  251  git status
+  252  git commit -m "Saving progress."
+  253  git push origin string-manipulation-3
+  254  git switch main
+  255  git pull origin main
+  256  git branch javascript-custom-methods
+  257  git switch javascript-custom-methods
+  258  git status
+  259  git add javascript-custom-methods
+  260  git status
+  261  git commit -m "Completed javascript-custom-methods exercise."
+  262  git push origin javascript-custom-methods
+  263  git switch main
+  264  git pull origin main
+  265  git branch javascript-this
+  266  git switch javascript-this
+  267  git status
+  268  fit add javascript-this
+  269  git committ -m "Completed javascript-this exercise."
+  270  git push origin javascript-this
+  271  git commit -m "Completed javascript-this exercise."
+  272  git add javascript-this
+  273  git status
+  274  git commit -m "Completed javascript-this exercise."
+  275  git push origin javascript-this
+  276  git switch main
+  277  gti pull origin main
+  278  git pull origin main
+  279  git switch javascript-this
+  280  git switch main
+  281  git pull origin main
+  282  git branch javascript-prototypes
+  283  git switch javascript-prototypes
+  284  git status
+  285  git add javascript-prototypes
+  286  git status
+  287  git commit -m "Completed javascript-prototypes exercise."
+  288  git push origin javascript-prototypes
+  289  git switch main
+  290  git pull origin main
+  291  git pull origin main
+  292  git branch javascript-constructors
+  293  git switch javascript-constructors
+  294  git status
+  295  git add javascript-constructors
+  296  git status
+  297  git commit -m "Completed javascript-constructors exercise."
+  298  git push origin javascript-constructors
+  299  git switch main
+  300  git pull origin main
+  301  git branch javascript-bank
+  302  git switch javascript-bank
+  303  git status
+  304  git add javascript-bank
+  305  git status
+  306  git commit -m "Saving progress."
+  307  git push origin javascript-bank
+  308  git switch main
+  309  git pull origin main
+  310  git branch javascript-timers
+  311  git switch javascript-timers
+  312  git status
+  313  git add
+  314  git add javascript-timers
+  315  git commit -m "Completed javascript-timers exercise."
+  316  git push origin javascript-timers
+  317  git switch main
+  318  git pull origin main
+  319  git switch javascript-bank
+  320  git pull origin javascript-bank
+  321  git status
+  322  git add javascript-bank
+  323  git status
+  324  git commit -m "Completed Account section."
+  325  git push origin javascript-bank
+  326  git status
+  327  git add javascript-bank
+  328  git status
+  329  git commit -m "Completed javascript-bank challenge."
+  330  git push origin javascript-bank
+  331  git switch main
+  332  git pull origin main
+  333  git branch javascript-carousel
+  334  git switch javascript-carousel
+  335  git status
+  336  git add javascript-carousel
+  337  git status
+  338  git commit -m "Added minimum HTML and CSS to begin testing in JS." 
+  339  git push origin javascript-carousel
+  340  git switch javascript-bank
+  341  git status
+  342  git add javascript-bank
+  343  git status
+  344  git commit -m "Reduced for loop logic in getTotalAssets() to one method." 
+  345  git push origin javascript-bank
+  346  git switch main
+  347  git switch javascript-carousel
+  348  git status
+  349  git add javascript-carousel
+  350  git commit -m "Added timer logic to update image every 3 seconds."
+  351  git push origin javascript-carousel
+  352  git status
+  353  git add javascript-carousel
+  354  git status
+  355  git commit -m "Added progress dots that step with image every 3 seconds."
+  356  git push origin javascript-carousel
+  357  git status
+  358  git add javascript-carousel
+  359  git status
+  360  git commit -m "Added chevrons."
+  361  git push origin javascript-carousel
+  362  git switch main
+  363  git pull origin amin
+  364  git pull origin main
+  365  git switch javascript-carousel
+  366  git pull origin javascript-carousel
+  367  git switch main
+  368  git pull origin main
+  369  git switch javascrtipt-carousel
+  370  git switch javascript-carousel
+  371  git pull origin main
+  372  git pull origin javasctipt-carousel
+  373  git pull origin javascript-carousel
+  374  git switch main
+  375  git branch http-messages
+  376  git switch http-messages
+  377  choco
+  378  choco -?
+  379  choco
+  380  choco -?
+  381  # Install httpie
+  382  choco install httpie
+  383  choco install httpie
+  384  http http://www.example.com/
+  385  http http://www.example.com/ --verbose
+  386  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+  387  http --body GET https://example.com > http-messages/index.html
+  388  git status
+  389  git add http-messages
+  390  git status
+  391  git commit -m "Completed http-messages exercise."
+  392  git push origin http-messages
+  393  git switch main
+  394  git pull origin main
+  395  git branch javascript-ajax
+  396  git switch javascript-ajax
+  397  git status
+  398  git add javascript-ajax
+  399  git status
+  400  git commit -m "Completed javascript-ajax exercise."
+  401  git push origin javascript-ajax
+  402  git switch main
+  403  git pull origin main
+  404  git pull origin main
+  405  https --verbose https://www.mmobomb.com/api1/games
+  406  https --verbose https://www.mmobomb.com/api1/latestnews
+  407  https --verbose https://api.myanimelist.net/v2
+  408  https --verbose https://api.rawg.io/api/games==76e41dc99b8042e0b6f0cd116d9dadc1
+  409  https --verbose https://api.rawg.io/api/games?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  410  https --verbose https://api.rawg.io/api/games/11859?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  411  https --verbose https://api.rawg.io/api/games/q="Assassin's Creed""
+  412  https --verbose https://api.rawg.io/api/games/q="Assassin's Creed"
+  413  https --verbose https://api.rawg.io/api/games/q="Assassin's Creed"
+  414  https --verbose https://api.rawg.io/api/games key=76e41dc99b8042e0b6f0cd116d9dadc1
+  415  https --verbose https://api.rawg.io/api/games?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  416  https --verbose https://api.rawg.io/api/games?key=76e41dc99b8042e0b6f0cd116d9dadc1 q=="Fallout"
+  417  https --verbose https://api.rawg.io/api/games?key=76e41dc99b8042e0b6f0cd116d9dadc1&name="Assassin's Creed"
+  418  https --verbose https://api.rawg.io/api/porta-2?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  419  https --verbose https://api.rawg.io/api/games/porta-2?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  420  https --verbose https://api.rawg.io/api/games/porta-2key=76e41dc99b8042e0b6f0cd116d9dadc1
+  421  https --verbose https://api.rawg.io/api/games/portal-2?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  422  https --verbose https://api.rawg.io/api/games/portal-2?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  423  https --verbose https://api.rawg.io/api/games/star-citizen?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  424  https --verbose https://rawg.io/api/games?search=Assassin's Creed?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  425  https --verbose https://rawg.io/api/games?search=Assassin's Creed?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  426  https --verbose https://rawg.io/api/games?search=assassin's-creed?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  427  https --verbose https://api.rawg.io/api/games/star-citizen?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  428  https://api.rawg.io/api/games/the-elder-scrolls-v-skyrim?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  429  https --verbose https://api.rawg.io/api/games/the-elder-scrolls-v-skyrim?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  430  git pull origin main
+  431  git switch string-manipulation-3
+  432  git pull origin string-manupulation-3
+  433  git status
+  434  git add string-manipulation-3
+  435  git status
+  436  git commit -m "Completed string-manipulation-3 challenge."
+  437  git push origin string-manipulation-3
+  438  git switch main
+  439  git pull orign man
+  440  git pull origin man
+  441  http --verbose https://api.rawg.io/api/games?key=76e41dc99b8042e0b6f0cd116d9dadc1
+  442  git pull origin main
+  443  git branch es6-const-let
+  444  git switch es6-const-let
+  445  git status
+  446  git add es6-const-let
+  447  git staus
+  448  git status
+  449  git commit -m "Completed es6-const-let exercise."
+  450  git push origin es6-const-let
+  451  git switch main
+  452  git pull origin main
+  453  git pull origin main
+  454  git branch es6-template-literals
+  455  git switch es6-template-literals
+  456  git status
+  457  git add es6-template-literals
+  458  git status
+  459  git commit -m "Compelted es6-template-literals exercise."
+  460  git push origin es6-template-literals
+  461  git status
+  462  git add es6-template-literals/index.html
+  463  git status
+  464  git commit -m "Added missing template literals."
+  465  git push origin es6-template-literals
+  466  git add es6-template-literals/index.html
+  467  git commit -m "Revised a template literal."
+  468  git push origin es6-template-literals
+  469  git switch main
+  470  git pull origin main
+  471  git branch es6-destructuring
+  472  git switch es6-destructuring
+  473  git status
+  474  git add es6-destructuring
+  475  git status
+  476  git commit -m "Completed es6-destructuring exercise."
+  477  git push origin es6-destructuring
+  478  git status
+  479  git add es6-destructuring/main.js
+  480  git status
+  481  git commit -m "Refined array destructor code."
+  482  git push origin es6-destructuring
+  483  git switch main
+  484  git branch es6-arrow-functions
+  485  git switch es6-arrow-functions
+  486  git status
+  487  git add es6-arrow-functions
+  488  git status
+  489  git commit -m "Completed es6-arrow-functions exercise."
+  490  git push origin es6-arrow-functions
+  491  git switch es6-destructuring
+  492  git status
+  493  git add es6-destructuring
+  494  git status
+  495  git commit -m "Resolved array destructor for last element of array."
+  496  git push origin es6-destructuring
+  497  git switch es6-arrow-functions
+  498  git switch main
+  499  git pull origin main
+  500  git pull origin main
+  501  git branch command-line-basics
+  502  git switch command-line-basics
+  503  cd command-line-basics
+  504  man man
+  505  man cat
+  506  cat laziness.txt
+  507  cat impatience.txt
+  508  cat hubris.txt
+  509  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  510  cat three-virtues.txt
+  511  man ls
+  512  ls
+  513  ls -aF
+  514  ls lfz-staff/
+  515  ls lfz-staff/ -aF
+  516  ls -aF lfz-staff > lfz-staff/contents.txt
+  517  cat lfz-staff/contents.txt
+  518  man pwd
+  519  pwd
+  520  pwd > i-was-here.txt
+  521  ls
+  522  man echo
+  523  echo 'Hello, World!'
+  524  echo 'Hello, World!' > hello.txt
+  525  ls
+  526  cat hello.txt
+  527  man touch
+  528  touch tag-youre-it.txt
+  529  touch snoot/boop.txt
+  530  ls snoot/
+  531  mna mkdir
+  532  man mkdir
+  533  mkdir parent
+  534  ls parent/
+  535  ls
+  536  mkdir -p parent/child/grandchild
+  537  touch parent/child/grandchild/.gitkeep
+  538  ls -a
+  539  man mkdir
+  540  ls -a parent/child/grandchild
+  541  man mv
+  542  mv pokiemans pokemon
+  543  ls
+  544  man rm
+  545  man rm
+  546  rm lol.txt
+  547  rm -r kill-me/
+  548  ls
+  549  ls kill-me/
+  550  man cp
+  551  cp and-then.txt no-and-then.txt
+  552  ls
+  553  man history
+  554  history
+  555  history > command-history.txt
