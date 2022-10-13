@@ -1,4 +1,10 @@
 const fs = require('fs');
+module.exports = {
+  readNotes,
+  addNote,
+  deleteNote,
+  editNote
+};
 
 function readNotes(object) {
   for (const property in object.notes) {
@@ -11,10 +17,7 @@ function addNote(object) {
   object.nextId++;
 
   fs.writeFile('./data.json', JSON.stringify(object, null, 2), err => {
-    if (err) {
-      console.log(err);
-      process.exit(1);
-    }
+    errorHandler(err);
   });
 }
 
@@ -22,10 +25,7 @@ function deleteNote(object) {
   delete object.notes[process.argv[3]];
 
   fs.writeFile('./data.json', JSON.stringify(object, null, 2), err => {
-    if (err) {
-      console.log(err);
-      process.exit(1);
-    }
+    errorHandler(err);
   });
 }
 
@@ -33,16 +33,13 @@ function editNote(object) {
   object.notes[process.argv[3]] = process.argv[4];
 
   fs.writeFile('./data.json', JSON.stringify(object, null, 2), err => {
-    if (err) {
-      console.log(err);
-      process.exit(1);
-    }
+    errorHandler(err);
   });
 }
 
-module.exports = {
-  readNotes,
-  addNote,
-  deleteNote,
-  editNote
-};
+function errorHandler(error) {
+  if (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
