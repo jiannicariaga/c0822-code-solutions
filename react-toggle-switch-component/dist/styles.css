@@ -49,3 +49,10 @@ body {
 .slider-on {
   left: 58px;
 }
+
+h1 {
+  position: absolute;
+  top: 16px;
+  left: 150px;
+  margin: 0;
+}

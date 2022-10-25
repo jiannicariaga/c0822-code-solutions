@@ -24,10 +24,13 @@ export class ToggleSwitch extends React.Component {
     }
 
     return (
-      <div className='wrapper'>
-        <span className={ switchClass } onClick={ this.handleClick }>
-          <span className={ sliderClass }></span>
-        </span>
+      <div>
+        <div className='wrapper'>
+          <span className={switchClass} onClick={this.handleClick}>
+            <span className={sliderClass}></span>
+          </span>
+          <h1>{(this.state.isClicked) ? 'ON' : 'OFF '}</h1>
+        </div>
       </div>
     );
   }
