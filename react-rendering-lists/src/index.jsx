@@ -12,9 +12,10 @@ const container = document.querySelector('#root');
 const root = ReactDOM.createRoot(container);
 
 function RenderList(props) {
-  const listItems = pokedex.map(pokedex =>
-    <li key={pokedex.number}>
-      {pokedex.name}
+  const pokemon = props.pokemon;
+  const listItems = pokemon.map(pokedex =>
+    <li key={pokemon.number}>
+      {pokemon.name}
     </li>
   );
   return (
