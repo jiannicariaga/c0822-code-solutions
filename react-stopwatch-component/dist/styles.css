@@ -23,7 +23,7 @@ body {
 .stop-watch {
   height: 100px;
   width: 100px;
-  border: 1px solid #000;
+  border: 2px solid #000;
   border-radius: 50%;
 }
 
