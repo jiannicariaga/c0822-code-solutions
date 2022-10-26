@@ -42,7 +42,16 @@ span {
   font-size: 1.5rem;
 }
 
+.red {
+  color: #cf2a28;
+}
+
+.green {
+  color: #6ba84f;
+}
+
 p {
+  color: #cf2a28;
   font-size: 0.9rem;
   margin: 0.25rem 0 0;
 }
