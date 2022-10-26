@@ -6,7 +6,7 @@ export class StopWatch extends React.Component {
       <div className='container'>
         <div className='row'>
           <div className='col-100'>
-            <div clasName='stop-watch'>
+            <div className='row stop-watch'>
               <h1>0</h1>
             </div>
           </div>

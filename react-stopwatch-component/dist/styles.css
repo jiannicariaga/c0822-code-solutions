@@ -7,13 +7,32 @@ body {
 }
 
 .container {
-  margin: 0 auto;
+  margin-top: 1rem;
 }
 
 .row {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .col {
   flex-basis: 100%;
+}
+
+.stop-watch {
+  height: 100px;
+  width: 100px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+}
+
+span {
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
