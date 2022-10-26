@@ -3,12 +3,17 @@ import React from 'react';
 export class AppDrawer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { drawerOpen: true };
-    this.handleClick = this.handleClick.bind(this);
+    this.state = { drawerOpen: false };
+    this.openDrawer = this.openDrawer.bind(this);
+    this.closeDrawer = this.closeDrawer.bind(this);
   }
 
-  handleClick() {
-    this.setState({ drawerOpen: !this.state.drawerOpen });
+  openDrawer() {
+    this.setState({ drawerOpen: true });
+  }
+
+  closeDrawer() {
+    this.setState({ drawerOpen: false });
   }
 
   render() {
@@ -24,12 +29,15 @@ export class AppDrawer extends React.Component {
     }
 
     return (
-      <div className={overlay}>
-        <div className={drawer}>
-          <h3>Menu</h3>
-          <a href="#" onClick={this.handleClick}>About</a>
-          <a href="#" onClick={this.handleClick}>Get Started</a>
-          <a href="#" onClick={this.handleClick}>Sign Up</a>
+      <div>
+        <span className='fas fa-bars' onClick={this.openDrawer}></span>
+        <div className={overlay} onClick={this.closeDrawer}>
+          <div className={drawer}>
+            <h3>Menu</h3>
+            <a href="#" onClick={this.closeDrawer}>About</a>
+            <a href="#" onClick={this.closeDrawer}>Get Started</a>
+            <a href="#" onClick={this.closeDrawer}>Sign Up</a>
+          </div>
         </div>
       </div>
     );
