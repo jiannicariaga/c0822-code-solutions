@@ -4,27 +4,24 @@ export class StopWatch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stopwatchIsClicked: false,
-      startTimer: false,
+      timerOn: false,
       elapsedTime: 0,
       timerId: null
     };
-    this.clickHandler = this.clickHandler.bind(this);
-    this.resetHandler = this.resetHandler.bind(this);
+    this.toggleTimer = this.toggleTimer.bind(this);
+    this.resetStopwatch = this.resetStopwatch.bind(this);
   }
 
-  resetHandler() {
-    this.setState({ stopwatchIsClicked: !this.state.stopwatchIsClicked });
-
-    if (this.state.stopwatchIsClicked && this.state.startTimer) {
+  resetStopwatch() {
+    if (!this.state.timerOn) {
       this.setState({ elapsedTime: 0 });
     }
   }
 
-  clickHandler() {
-    this.setState({ startTimer: !this.state.startTimer });
+  toggleTimer() {
+    this.setState({ timerOn: !this.state.timerOn });
 
-    if (this.state.startTimer) {
+    if (!this.state.timerId) {
       this.setState({
         timerId: setInterval(() => {
           this.setState({ elapsedTime: this.state.elapsedTime + 1 });
@@ -38,7 +35,7 @@ export class StopWatch extends React.Component {
   render() {
     let icon;
 
-    if (this.state.startTimer) {
+    if (this.state.timerOn) {
       icon = 'fa-solid fa-pause';
     } else {
       icon = 'fa-solid fa-play';
@@ -48,14 +45,14 @@ export class StopWatch extends React.Component {
       <div className='container'>
         <div className='row'>
           <div className='col-100'>
-            <div className='row stop-watch' onClick={this.resetHandler}>
+            <div className='row stop-watch' onClick={this.resetStopwatch}>
               <h1>{this.state.elapsedTime}</h1>
             </div>
           </div>
         </div>
         <div className='row'>
           <div className='col-100'>
-            <span className={icon} onClick={this.clickHandler}></span>
+            <span className={icon} onClick={this.toggleTimer}></span>
           </div>
         </div>
       </div>
