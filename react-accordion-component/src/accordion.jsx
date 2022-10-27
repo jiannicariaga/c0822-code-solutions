@@ -8,6 +8,7 @@ export default class Accordion extends React.Component {
 
   toggleContent(event) {
     const accordionItems = document.querySelectorAll('.label');
+    const openAccordionItem = document.querySelector('.open');
 
     accordionItems.forEach(accordionItem => {
       if (accordionItem.classList.contains('open')) {
@@ -17,6 +18,10 @@ export default class Accordion extends React.Component {
 
     if (!event.target.classList.contains('open')) {
       event.target.classList.add('open');
+    }
+
+    if (event.target === openAccordionItem) {
+      event.target.classList.remove('open');
     }
   }
 
