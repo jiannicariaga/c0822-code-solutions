@@ -15,12 +15,15 @@ p {
 
 .accordion-wrapper {
   width: 300px;
-  margin: 0 auto;
+  margin: 1rem auto 0;
+}
+
+.accordion-item:not(:last-child) {
+  margin-bottom: 2px;
 }
 
 .label,
 .content {
-  border: 1px solid #000;
   margin: 0;
 }
 
@@ -37,9 +40,12 @@ p {
 }
 
 .label + .content {
-  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
 }
 
 .label.open + .content {
-  display: block;
+  max-height: 200px;
+  transition: max-height 0.3s ease-in;
 }

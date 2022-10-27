@@ -1,11 +1,6 @@
 import React from 'react';
 
 export default class Accordion extends React.Component {
-  constructor(props) {
-    super(props);
-    this.toggleContent = this.toggleContent.bind(this);
-  }
-
   toggleContent(event) {
     const accordionItems = document.querySelectorAll('.label');
     const openAccordionItem = document.querySelector('.open');
