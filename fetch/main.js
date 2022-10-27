@@ -1,7 +1,11 @@
-fetch('https://jsonplaceholder.typicode.com/users')
-  .then(response => response.json())
-  .then(data => console.log(data));
+const usersUrl = 'https://jsonplaceholder.typicode.com/users';
+const pokemonUrl = 'https://pokeapi.co/api/v2/pokemon/133';
 
-fetch('https://pokeapi.co/api/v2/pokemon/133')
-  .then(response => response.json())
-  .then(data => console.log(data));
+function sendReq(url) {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data));
+}
+
+sendReq(usersUrl);
+sendReq(pokemonUrl);
