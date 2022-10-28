@@ -53,9 +53,9 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        const currentTodos = this.state.todos;
-        currentTodos[stateIndex] = data;
-        this.setState({ todos: currentTodos });
+        const todosCopy = [].concat(this.state.todos);
+        todosCopy[stateIndex] = data;
+        this.setState({ todos: todosCopy });
       })
       .catch(err => console.error(err));
   }
