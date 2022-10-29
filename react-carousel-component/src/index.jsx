@@ -6,23 +6,28 @@ const container = document.querySelector('#root');
 const root = ReactDOM.createRoot(container);
 const imagesArr = [
   {
-    src: 'images/css.jpg',
+    id: 1,
+    src: '../images/css.jpg',
     alt: 'CSS'
   },
   {
-    src: 'images/javascript.jpg',
+    id: 2,
+    src: '../images/javascript.jpg',
     alt: 'JavaScript'
   },
   {
-    src: 'images/node.jpg',
+    id: 3,
+    src: '../images/node.jpg',
     alt: 'Node.js'
   },
   {
-    src: 'images/react-git.jpg',
+    id: 4,
+    src: '../images/react-git.jpg',
     alt: 'React.js and Git'
   },
   {
-    src: 'images/cpp.jpg',
+    id: 5,
+    src: '../images/cpp.jpg',
     alt: 'C++'
   }
 ];
