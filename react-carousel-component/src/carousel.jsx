@@ -3,30 +3,50 @@ import React from 'react';
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      src: '../images/css.jpg',
-      alt: 'CSS'
-    };
+    this.state = { imageId: 1 };
+    this.stepImage = this.stepImage.bind(this);
+  }
+
+  stepImage(event) {
+    const imageId = this.state.imageId;
+    const imagesArrLength = this.props.images.length;
+    if (event.target.id === 'back') {
+      if (imageId === 1) {
+        this.setState({ imageId: imagesArrLength });
+      } else {
+        this.setState({ imageId: this.state.imageId - 1 });
+      }
+    }
+    if (event.target.id === 'next') {
+      if (imageId === imagesArrLength) {
+        this.setState({ imageId: 1 });
+      } else {
+        this.setState({ imageId: this.state.imageId + 1 });
+      }
+    }
   }
 
   render() {
-    const image = this.props.images;
-    const progressDots = image.map(image => {
+    const images = this.props.images;
+    const imageId = this.state.imageId;
+    const currentImage = images.find(images => images.id === imageId);
+    const progressDots = images.map(images => {
+      const dotType = (images.id === currentImage.id) ? 'fas' : 'far';
       return (
-        <span className='far fa-circle' key={image.id}></span>
+        <span id={images.id} className={`${dotType} fa-circle`} key={images.id}></span>
       );
     });
     return (
       <div className='carousel'>
         <div className='row'>
           <div className='chevron col-10'>
-            <span className='fas fa-chevron-left'></span>
+            <span id='back' className='fas fa-chevron-left' onClick={this.stepImage}></span>
           </div>
           <div className='hero col-80'>
-            <img src={image[0].src} alt={image[0].alt}></img>
+            <img src={currentImage.src} alt={currentImage.alt}></img>
           </div>
           <div className='chevron col-10'>
-            <span className='fas fa-chevron-right'></span>
+            <span id='next' className='fas fa-chevron-right' onClick={this.stepImage}></span>
           </div>
         </div>
         <div className='row'>
