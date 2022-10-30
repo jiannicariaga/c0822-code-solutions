@@ -52,9 +52,10 @@ export default class Carousel extends React.Component {
         </span>
       );
     });
+    const backgroundImage = { backgroundImage: `url(${currentImage.src})` };
     return (
-      <div className='carousel'>
-        <div className='row'>
+      <div className='carousel' style={backgroundImage}>
+        <div className='actions row'>
           <div className='chevron col-10'>
             <span
               id='back'
@@ -62,11 +63,8 @@ export default class Carousel extends React.Component {
               onClick={this.stepImage}>
             </span>
           </div>
-          <div className='hero col-80'>
-            <img
-              src={currentImage.src}
-              alt={currentImage.alt}>
-            </img>
+          <div className='progress-dots col-80'>
+            {progressDots}
           </div>
           <div className='chevron col-10'>
             <span
@@ -75,9 +73,6 @@ export default class Carousel extends React.Component {
               onClick={this.stepImage}>
             </span>
           </div>
-        </div>
-        <div className='row'>
-          <div className='progress-dots col-100'>{progressDots}</div>
         </div>
       </div>
     );
