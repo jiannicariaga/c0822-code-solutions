@@ -3,7 +3,10 @@ import React from 'react';
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { imageId: 1 };
+    this.state = {
+      imageId: 1,
+      intervalId: null
+    };
     this.stepImage = this.stepImage.bind(this);
   }
 
@@ -16,13 +19,14 @@ class Carousel extends React.Component {
       } else {
         this.setState({ imageId: this.state.imageId - 1 });
       }
-    }
-    if (event.target.id === 'next') {
+    } else if (event.target.id === 'next') {
       if (imageId === imagesArrLength) {
         this.setState({ imageId: 1 });
       } else {
         this.setState({ imageId: this.state.imageId + 1 });
       }
+    } else {
+      this.setState({ imageId: Number(event.target.id) });
     }
   }
 
@@ -33,20 +37,36 @@ class Carousel extends React.Component {
     const progressDots = images.map(images => {
       const dotType = (images.id === currentImage.id) ? 'fas' : 'far';
       return (
-        <span id={images.id} className={`${dotType} fa-circle`} key={images.id}></span>
+        <span
+          id={images.id}
+          className={`${dotType} fa-circle`}
+          key={images.id}
+          onClick={this.stepImage}>
+        </span>
       );
     });
     return (
       <div className='carousel'>
         <div className='row'>
           <div className='chevron col-10'>
-            <span id='back' className='fas fa-chevron-left' onClick={this.stepImage}></span>
+            <span
+              id='back'
+              className='fas fa-chevron-left'
+              onClick={this.stepImage}>
+            </span>
           </div>
           <div className='hero col-80'>
-            <img src={currentImage.src} alt={currentImage.alt}></img>
+            <img
+              src={currentImage.src}
+              alt={currentImage.alt}>
+            </img>
           </div>
           <div className='chevron col-10'>
-            <span id='next' className='fas fa-chevron-right' onClick={this.stepImage}></span>
+            <span
+              id='next'
+              className='fas fa-chevron-right'
+              onClick={this.stepImage}>
+            </span>
           </div>
         </div>
         <div className='row'>
