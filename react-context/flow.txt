@@ -1,0 +1,211 @@
+USER CAN SIGN UP
+
+[Abstraction]
+In the Sign Up view, the user is required to provide a username and password
+to register for the web application. When the user fills out both form inputs
+and clicks 'Register', they are redirected to the Sign In page to log in using
+the same credentials.
+
+[Code Flow]
+Inside the render method of the App class (app.jsx), the renderPage method is
+called to determine which view to render as a child of the PageContainer
+component. Inside the renderPage method are conditional statements that check
+the value of the current path (the text after 'localhost:3000/#'). For this
+feature, the current path is 'sign-up' which returns the Auth component. Back
+inside the render method, the Auth component is rendered as a child of the
+PageContainer component. Now to the Auth component...
+
+Inside the render method of the AuthPage class (auth.jsx), the values of the
+user, route, and handleSignIn properties are passed down from the closest
+parent component that provides the respective context object. In this case, it
+is the AppContext component from app.jsx. First, the render method checks if
+the user property has a value. If the value of user property is truthy (a user
+is logged in but decided to visit 'localhost:3000/#sign-up' like a baka), then
+the Redirect component is returned from the render method. Next, there is a
+conditional statement that checks the current path to determine which welcome
+message to display. For this feature, the current path is 'sign-up', so 'Create
+an account to get started!' is returned. Lastly, inside the return expression,
+the Sign Up form is rendered with the respective welcome message along with the
+AuthForm component. Now to the AuthForm component...
+
+But before we do that, let's talk about the Redirect component that was
+mentioned earlier in the context of this feature. In the Redirect function,
+(redirect.jsx) a prop with a value of an empty string is passed down from
+auth.jsx. A conditional statement checks this value to determine which view to
+send the client to. In this case, only '#' is used to replace the current URL.
+This results in the logged in user being yeeted from the Sign Up view to what
+some would consider capital punishment. Back to the AuthForm component!
+
+Inside the constructor function of the AuthForm class (auth-form.jsx), there
+are several items to keep in mind that will be used throughout the component's
+lifecycle: The states 'username' and 'password' and the handleChange and
+handleSubmit methods. When the user provides input to the sign up form's
+username and password fields, the handleChange method is called to update the
+component's username or password state (depending on which field the user is
+filling out at the time). The change of state causes the component to re-render
+with the current username and password values in the sign up form. Once the
+user clicks Submit after providing a username a password, the handleSubmit
+method is called. Inside the handleSubmit method, a POST request is sent to the
+server. Yup, that's it. Sike, the POST request's body contains the username and
+password properties converted into a JSON string. Also, because the user is
+signing up, 'sign-up' is appended to the end of the request URL. But why do
+that? It's time to move to the server code.
+
+In server/index.js, there is a middleware function somewhere in the middle of
+the file that has the same path URL as the one sent as a POST request in the
+AuthForm component. Because they match, the server is going to use it (duh).
+First, the function checks if both a username and password were provided. If
+for some reason they are not, then the server yeets a 400 error to the client.
+If both username and password are there, the server has to refrain from yeeting
+and hash the password. The password gets hashed by the hash method of the
+argon2 object and is inserted into an SQL query along with the username. Then,
+the SQL statement is executed on the database via the query method of the db
+object. By the way, if either hashing the password or executing the query
+fails, then the server is gonna yeet to an error middleware function that will
+yeet the actual error.
+
+The last thing I should mention is that error middleware function before the
+next feature. Let's say either the password hashing or database query didn't
+work out. The current middleware will yeet to the errorMiddleware function.
+However, inside the errorMiddleware function (error-middleware.js), there are
+a few conditional statements that check for where the error actually came from.
+In this case, it would have been a server error which yeets the client a 500
+error.
+
+--------------------------------------------------------------------------------
+
+USER CAN SIGN IN
+
+[Abstraction]
+In the Sign In view, the user is required to provide a username and password
+to access the web application. When the user fills out both form inputs and
+clicks 'Log In', they are redirected to a good time (assuming they have an
+account and entered the correct credentials).
+
+[Code Flow]
+The flow of this feature is very similar to the 'USER CAN SIGN UP' feature, so
+I will be grazing over the similarities while emphasizing what is unique. We
+will be starting at 'localhost:3000/#sign-in' where an Auth component is
+rendered as a child of the PageContainer component (app.jsx). Also, the Auth
+component renders the appropriate welcome message and an AuthForm component
+(auth.jsx). Lastly, the AuthForm component renders the appropriate form
+messages and will send a POST request to the server on submission. Now here's
+where it gets different...
+
+Previously, 'sign-up' was appended to the end of the POST request URL. Now it's
+'sign-in' which will trigger a different middleware function somewhere in the
+middle of server/index.js. Now focusing on the respective middleware function,
+it will still check for a lack of username or password and yeet an error if so.
+Otherwise, a SQL statement is prepared to get the hashed password of the
+username that was submitted in the sign in form. One the result of the query
+is recieved, there is a conditional statement that checks if the username
+provided even exists on the database. If it doesn't, then the server yeets a
+401 error because the user is baka. If the username exists, then the entered
+password is hashed and compared to the hashed password from the query result.
+If they do not match, then the server yeets a 401 error for the same reason as
+before. Let's say the username exists and the passwords match, a token is
+generated to authenticate the user. Having this token attached to the user is
+what ultimately gives them access to a good time. This is accomplished by
+creating a payload which is an object containing the user's account
+information. Next, a the token is generated by combining three things: a header
+that specifies the type of token and signing algorithm, the payload which
+contains account informaiton, and a signature which uses the header, payload,
+and secret key which happens to be imported from the .env file. If the
+password verification or matching were to fail, then the server yeets a 401
+error to the client because the user is also sussy. If all goes well, then the
+server sends a user and token property to the client.
+
+Now that we know what happens on the server side, let's zoom back out to the
+handleSubmit method of the AuthForm class (auth-form.jsx) because the POST
+request submitted after logging in returns a result. There is a conditional
+statement the POST request that checks if the server response contains a
+user property and token property. Since they are present in the result, the
+onSignIn method is called passing in the result. Now we gotta zoom out even
+more because the onSignIn method was passed in as a prop from the AuthPage
+class (auth.jsx) which was passed in as a context property from the
+AppContext context object in the App class (app.jsx). Focusing on the
+handleSignIn method in app.jsx, the user property of the App compnent's state
+is assigned the vlaue of the user property that was passed up from
+auth-form.jsx. Additionally, the value of the token property is assigned to
+the client's localStorage to provide the current user access to good times
+while logged in. Now that the App component's state has changed, it will
+re-render, but instead of rendering the Auth component as it did during the
+sign in process, it will instead render the Redirect component. As mentioned
+in the previous feature's code flow, the Redirect function will replace the
+current URL with '#'. This change will cause the App component to re-render
+again but return the Home component instead of the Auth component now that a
+user is signed in.
+
+Last thing to talk about here is the Home component. In the render method of
+the Home class (home.jsx), there is a conditional statement that checks if a
+user is signed in. Right now there is, so we'll skip it for now (in the case
+there isn't a user logged in, the client will redirect to the sign in view).
+In the return expression, our lord and savior, Rick Astley, speaks of sweet
+words of affirmation and reassurance. Some worshippers say they can hear his
+voice despite only being shown as a .gif.
+
+--------------------------------------------------------------------------------
+
+USER CAN STAY SIGNED IN (EVEN IF THEY REFERESH THE PAGE)
+
+[Abstraction]
+The user is signed in and on the home page but decides to visit a different
+website on the same tab. When the user returns to the app either via url or
+broswer back button, they return to the home page and are still signed in.
+y tho
+
+[Code Flow]
+The reason why the user can stay signed in due to two methods found in the App
+class of app.jsx: handleSignIn and componentDidMount (and render). After
+sucessfully signing in to the application as mentioned in the previous
+feature's code flow, the handleSignIn method was called. The user's token
+is saved into the browser's localStorage and and the value of the user
+property from the server response is saved to the App component's user state.
+If the logged in user were to visit a different site and click the brower back
+button (refreshing the page) the user is stays logged in because of what
+happens in the componentDidMount method. Let's take a moment to talk about
+this method before continuing on why the user stays logged in...
+
+This method only runs once when the component gets mounted to the DOM. Inside
+this method, an event listener is attached to the DOM that would run more than
+once despite being called in the method (a sneaky/clever boi). This event
+listener listens for hash changes which is why the user can see different pages
+with corresponding URLs. Now back to the main topic.
+
+The token stored in localStorage by the handleSignIn method is saved and
+checked by a conditional statement. If a token was actually pulled
+(truthy/exists), then the token is decoded and assigned to the user state
+property. Additionally, the isAuthorizing property is set to false which allows
+the App component to render a new page. Basically, as long as a user's token
+is saved in localStorage, they will remain signed in. The next (and last)
+feature will explain how to remove it.
+
+--------------------------------------------------------------------------------
+
+USER CAN SIGN OUT
+
+[Abstraction]
+The user has had enough Rick Astley. They need to escape pronto, but there is
+only one way: the sign out button. The user would need to sign in if they dare
+face Astley-sama once more.
+
+[Code Flow]
+For this feature, we're going to start with the Navbar component which happens
+to be rendered in the App class (app.jsx). Focusing on the Navbar class in
+navbar.jsx, its render method is importing the handleSignOut property from its
+closest parent context component, AppContext. The handleSignOut property is
+actually a method from app.jsx which is called when the user clicks on the
+'Sign Out' button.
+
+When the user clicks on the 'Sign Out' button, the handleSignOut method is
+called which removes the token from the browser's localStorage and sets the
+user state property to null. The change in state triggers a re-render of the
+App component. The render method calls the renderPage method which would
+return the Home component since that was the last path before signing out.
+However, now that the user state property is set to null, the rander method of
+the Home class (home.jsx) will return a Redirect component that passes in the
+string 'sign-in' as a prop. As mentioned in previous code flows, the Redirect
+component will update the URL to 'sign-in', triggering the hash change event
+listener, triggering a state change, and triggering a re-render of the App
+component except the renderPage method now returns the Auth component and
+renders the Sign In page.
