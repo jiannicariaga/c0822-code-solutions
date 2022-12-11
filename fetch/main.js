@@ -7,5 +7,13 @@ function sendReq(url) {
     .then(data => console.log(data));
 }
 
+async function asyncSendReq(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+}
+
 sendReq(usersUrl);
 sendReq(pokemonUrl);
+asyncSendReq(usersUrl);
+asyncSendReq(pokemonUrl);
