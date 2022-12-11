@@ -13,11 +13,22 @@ export default class App extends React.Component {
     this.toggleCompleted = this.toggleCompleted.bind(this);
   }
 
-  componentDidMount() {
-    fetch('/api/todos')
-      .then(response => response.json())
-      .then(data => this.setState({ todos: data }))
-      .catch(err => console.error(err));
+  // componentDidMount() {
+  //   fetch('/api/todos')
+  //     .then(response => response.json())
+  //     .then(data => this.setState({ todos: data }))
+  //     .catch(err => console.error(err));
+  // }
+
+  async componentDidMount() {
+    try {
+      const response = await fetch('/api/todos');
+      if (!response.ok) throw Error(response.statusText);
+      const data = await response.json();
+      this.setState({ todos: data });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   addTodo(newTodo) {
