@@ -31,19 +31,36 @@ export default class App extends React.Component {
     }
   }
 
-  addTodo(newTodo) {
-    fetch('/api/todos', {
+  // addTodo(newTodo) {
+  //   fetch('/api/todos', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify(newTodo)
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       const currentTodos = this.state.todos;
+  //       const newTodos = currentTodos.concat(data);
+  //       this.setState({ todos: newTodos });
+  //     })
+  //     .catch(err => console.error(err));
+  // }
+
+  async addTodo(newTodo) {
+    const headers = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newTodo)
-    })
-      .then(response => response.json())
-      .then(data => {
-        const currentTodos = this.state.todos;
-        const newTodos = currentTodos.concat(data);
-        this.setState({ todos: newTodos });
-      })
-      .catch(err => console.error(err));
+    };
+    try {
+      const response = await fetch('/api/todos', headers);
+      if (!response.ok) throw Error(response.statusText);
+      const data = await response.json();
+      const todos = this.state.todos.concat(data);
+      this.setState({ todos });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   toggleCompleted(todoId) {
