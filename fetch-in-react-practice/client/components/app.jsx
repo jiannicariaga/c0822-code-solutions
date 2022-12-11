@@ -47,13 +47,13 @@ export default class App extends React.Component {
   // }
 
   async addTodo(newTodo) {
-    const headers = {
+    const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newTodo)
     };
     try {
-      const response = await fetch('/api/todos', headers);
+      const response = await fetch('/api/todos', options);
       if (!response.ok) throw Error(response.statusText);
       const data = await response.json();
       const todos = this.state.todos.concat(data);
@@ -63,29 +63,56 @@ export default class App extends React.Component {
     }
   }
 
-  toggleCompleted(todoId) {
+  // toggleCompleted(todoId) {
+  //   let stateIndex;
+  //   let toggledStatus;
+
+  //   for (let i = 0; i < this.state.todos.length; i++) {
+  //     if (this.state.todos[i].todoId === todoId) {
+  //       stateIndex = i;
+  //       toggledStatus = { isCompleted: !this.state.todos[i].isCompleted };
+  //     }
+  //   }
+
+  //   fetch(`/api/todos/${todoId}`, {
+  //     method: 'PATCH',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify(toggledStatus)
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       const todosCopy = [].concat(this.state.todos);
+  //       todosCopy[stateIndex] = data;
+  //       this.setState({ todos: todosCopy });
+  //     })
+  //     .catch(err => console.error(err));
+  // }
+
+  async toggleCompleted(todoId) {
+    const { todos } = this.state;
     let stateIndex;
     let toggledStatus;
-
-    for (let i = 0; i < this.state.todos.length; i++) {
-      if (this.state.todos[i].todoId === todoId) {
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].todoId === todoId) {
         stateIndex = i;
-        toggledStatus = { isCompleted: !this.state.todos[i].isCompleted };
+        toggledStatus = { isCompleted: !todos[i].isCompleted };
       }
-    }
-
-    fetch(`/api/todos/${todoId}`, {
+    };
+    const options = {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(toggledStatus)
-    })
-      .then(response => response.json())
-      .then(data => {
-        const todosCopy = [].concat(this.state.todos);
-        todosCopy[stateIndex] = data;
-        this.setState({ todos: todosCopy });
-      })
-      .catch(err => console.error(err));
+    }
+    try {
+      const response = await fetch(`/api/todos/${todoId}`, options);
+      if (!response.ok) throw Error(response.statusText);
+      const data = await response.json();
+      const todosCopy = [].concat(todos);
+      todosCopy[stateIndex] = data;
+      this.setState({ todos: todosCopy });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   render() {
